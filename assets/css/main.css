@@ -122,6 +122,24 @@ input, select, textarea {
 			border: 0;
 		}
 
+	video {
+		-moz-transition: color .2s ease-in-out;
+		-webkit-transition: color .2s ease-in-out;
+		-ms-transition: color .2s ease-in-out;
+		transition: color .2s ease-in-out;
+		color: #43B3E0;
+		text-decoration: underline;
+	}
+	
+		video:hover {
+			color: #43bff0 !important;
+		}
+	
+		video source {
+			border: 0;
+		}
+	
+
 	b, strong {
 		font-weight: 600;
 		color: #3e3e3e;
@@ -149,7 +167,7 @@ input, select, textarea {
 		font-style: italic;
 	}
 
-	h1, h2, h3, h4, h5, h6 {
+	h1, h2, h3, h4, h5, h6, video {
 		color: #3e3e3e;
 		margin: 0 0 0.75em 0;
 	}
@@ -167,6 +185,9 @@ input, select, textarea {
 		font-size: 3.25em;
 		letter-spacing: -0.025em;
 		font-weight: 300;
+	}
+	p {
+		text-align: justify;
 	}
 
 		h1 strong {
@@ -199,6 +220,10 @@ input, select, textarea {
 		height: 1px;
 		margin: 3em 0;
 	}
+	#hrclass {
+		color: white;
+	}
+
 
 	p, ul, ol, dl, table {
 		margin-bottom: 2em;
@@ -228,11 +253,11 @@ input, select, textarea {
 		max-width: calc(100% - 50px);
 		width: 1200px;
 	}
-
+        
 		.container.medium {
 			width: 900px;
 		}
-
+        
 		@media screen and (max-width: 1680px) {
 
 			.container {
@@ -264,7 +289,12 @@ input, select, textarea {
 			}
 
 				.container.medium {
-					width: 75%;
+					width: 100%;
+				}
+				.row.aln-center {
+					width: 100%;
+					display: inline-flex;
+					flex-direction: row;
 				}
 
 		}
@@ -279,7 +309,13 @@ input, select, textarea {
 				.container.medium {
 					width: 100%;
 				}
+				.row.aln-center {
+					width: 100%;
+					display: inline-flex;
+					flex-direction: row;
+				}
 
+				    
 		}
 
 /* Row */
@@ -1103,6 +1139,9 @@ input, select, textarea {
 				.row > .col-6-medium {
 					width: 50%;
 				}
+				.row.aln-center> .col-6-medium {
+					width: 31%;
+				}
 
 				.row > .off-6-medium {
 					margin-left: 50%;
@@ -1268,6 +1307,7 @@ input, select, textarea {
 				box-sizing: border-box;
 				align-items: stretch;
 			}
+
 			  /* bye Shafi mobile class */
 			.mobile{
 				   padding-bottom: 3%;
@@ -1637,14 +1677,16 @@ input, select, textarea {
 		}
 
 		.image.fit {
-			display: block;
+			display: inline-block;
 			width: 100%;
 		}
 
 		.image.featured {
-			display: block;
-			width: 100%;
-			margin: 0 0 2em 0;
+			display: inline-block;
+			width: 55%;
+			margin: 0 0 4em 0;
+			position: relative;
+			
 		}
 
 		.image.left {
@@ -1662,7 +1704,48 @@ input, select, textarea {
 				width: auto;
 			}
 
+/* Vidoe */
+
+	.video {
+		display: inline-block;
+		position: relative;
+	}
+
+		.video source {
+			display: block;
+			width: 100%;
+		}
+
+		.video.fit {
+			display: block;
+			width: 100%;
+		}
+
+		.video.featured {
+			display: block;
+			width: 100%;
+			margin: 0 0 2em 0;
+		}
+		.video.left {
+			float: left;
+			margin: 0 2em 2em 0;
+		}
+
+		.video.centered {
+			display: block;
+			margin: 0 0 2em 0;
+			width: 50%;
+		}
+
+			.video.centered source {
+				margin: 0 auto;
+				width: auto;
+			}
+
+
 /* Button */
+
+
 
 	input[type="button"],
 	input[type="submit"],
@@ -1932,8 +2015,23 @@ input, select, textarea {
 		.box.style2 h3 {
 			margin-bottom: 0.25em;
 		}
+		.box.style2 hr {
+			border: 0;
+			border-top: none;
+			border-top-color: rgba(255, 255, 255, 0.35);
+			box-shadow: 0px 1px 0px 0px white;
+			height: 1px;
+			margin: 0.9em 0;
+		}
 
-		.box.style2 .image {
+		.box.style2 .video{
+			position: relative;
+			left: 2em;
+			top: 2em;
+			margin: -4em 0 4em -4em;
+			width: 122%;
+		}
+		.box.style2 .image{
 			position: relative;
 			left: 2em;
 			top: 2em;
@@ -2123,6 +2221,16 @@ input, select, textarea {
 			#top .image img {
 				border-radius: 100%;
 			}
+		#top .video {
+			border-radius: 100%;
+			width: 20em;
+			height: 20em;
+			margin: 0;
+		}
+	
+			#top .video source {
+				border-radius: 100%;
+			}
 
 		#top h1 {
 			margin-top: 0.35em;
@@ -2196,6 +2304,14 @@ input, select, textarea {
 			header {
 				margin: 0 0 4em 0;
 			}
+			
+			.box .video.featured {
+				position: relative;
+				left: 10px;
+				top: 20px;
+				margin: -50px 0 50px -40px;
+				width: 124%;
+			}
 
 		/* Wrappers */
 
@@ -2220,6 +2336,11 @@ input, select, textarea {
 					height: 24em;
 					margin: 0;
 				}
+				#top .video {
+					width: 24em;
+					height: 24em;
+					margin: 0;
+				}
 
 	}
 
@@ -2228,13 +2349,20 @@ input, select, textarea {
 	@media screen and (max-width: 980px) {
 
 		/* Articles */
+			.box .video.featured {
+				position: relative;
+				left: 10px;
+				top: 20px;
+				margin: -50px 0 50px -40px;
+				width: 120%;
+			}
 
 			#top {
 				text-align: center;
 				padding: 5em 0;
 			}
 
-				#top .image {
+				#top .video {
 					margin: 0 auto 2em auto;
 				}
 
@@ -2358,6 +2486,20 @@ input, select, textarea {
 					margin-bottom: 0.25em;
 				}
 
+				.box .video.centered {
+					margin-bottom: 1em;
+				}
+
+				.box .video.featured {
+					position: relative;
+					left: 20px;
+					top: 20px;
+					margin: -50px 0 50px -40px;
+					width: 111.5%;
+				}
+				.box .video.centered {
+					margin-bottom: 1em;
+				}
 				.box .image.centered {
 					margin-bottom: 1em;
 				}
@@ -2414,6 +2556,11 @@ input, select, textarea {
 			}
 
 				#top .image {
+					width: 15em;
+					height: 15em;
+					margin-bottom: 0;
+				}
+				#top .video {
 					width: 15em;
 					height: 15em;
 					margin-bottom: 0;

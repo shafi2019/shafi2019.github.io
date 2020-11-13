@@ -697,6 +697,13 @@
 				margin: -4em 0 4em -4em;
 				width: auto;
 			}
+			.video {
+				position: relative;
+				left: 2em;
+				top: 2em;
+				margin: -4em 0 4em -4em;
+				width: auto;
+			}
 		}
 	}
 
@@ -966,6 +973,11 @@
 					height: 24em;
 					margin: 0;
 				}
+				.video {
+					width: 24em;
+					height: 24em;
+					margin: 0;
+				}
 			}
 
 	}
@@ -1101,6 +1113,20 @@
 				}
 
 				.image {
+					&.centered {
+						margin-bottom: 1em;
+					}
+
+					&.featured {
+						position: relative;
+						left: 20px;
+						top: 20px;
+						margin: -50px 0 50px -40px;
+						width: auto;
+					}
+				}
+
+				.video {
 					&.centered {
 						margin-bottom: 1em;
 					}
